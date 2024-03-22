@@ -1,0 +1,34 @@
+h1 {
+    font-size: 80px;
+    font-family: "华文楷体", cursive, serif, sans-serif;
+}
+
+h2 {
+    font-size: 45px;
+    font-family: "Lucida Calligraphy", cursive, serif, sans-serif;
+}
+
+/*.table.imagetable {*/
+/*    font-family: verdana, arial, sans-serif;*/
+/*    font-size: 11px;*/
+/*    color: #333333;*/
+/*    border-width: 1px;*/
+/*    border-color: #999999;*/
+/*    border-collapse: collapse;*/
+/*}*/
+
+/*table.imagetable th {*/
+/*    background: #b5cfd2;*/
+/*    border-width: 1px;*/
+/*    padding: 8px;*/
+/*    border-style: solid;*/
+/*    border-color: #999999;*/
+/*}*/
+
+/*table.imagetable td {*/
+/*    background: #dcddc0;*/
+/*    border-width: 1px;*/
+/*    padding: 8px;*/
+/*    border-style: solid;*/
+/*    border-color: #999999;*/
+/*}*/

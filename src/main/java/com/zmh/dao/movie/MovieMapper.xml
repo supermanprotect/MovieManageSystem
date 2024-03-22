@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zmh.dao.movie.MovieMapper">
+
+    <update id="updateMovie" parameterType="com.zmh.pojo.Movie">
+        update movie_mangement.movie
+        <trim prefix="set" suffixOverrides="," suffix="where id = #{id}">
+            <if test="name != '' ">name = #{name},</if>
+            <if test="type != '' ">type = #{type},</if>
+            <if test="synopsis != '' ">synopsis = #{synopsis},</if>
+            <if test="img != '' ">img = #{img},</if>
+            <if test="video != '' ">video = #{video},</if>
+
+        </trim>
+    </update>
+
+    <select id="getMovieList" resultType="com.zmh.pojo.Movie">
+        select *
+        from movie_mangement.movie;
+    </select>
+
+    <select id="getMovieById" resultType="com.zmh.pojo.Movie">
+        select *
+        from movie_mangement.movie
+        where id = #{id};
+    </select>
+
+    <select id="getMovieByNameOrType" resultType="com.zmh.pojo.Movie" parameterType="String">
+        select * from movie_mangement.movie
+        <where>
+            <if test="name != ''">
+                name = #{name}
+            </if>
+            <if test="type != ''">
+                and type = #{type}
+            </if>
+        </where>
+    </select>
+
+    <insert id="addMovie" parameterType="com.zmh.pojo.Movie">
+        insert into movie_mangement.movie (id, name, type, synopsis, img, video)
+        VALUES (#{id}, #{name}, #{type}, #{synopsis}, #{img}, #{video})
+    </insert>
+
+    <delete id="deleteMovieById" parameterType="integer">
+        delete
+        from movie_mangement.movie
+        where id = #{id}
+    </delete>
+
+
+</mapper>
+    
+    
